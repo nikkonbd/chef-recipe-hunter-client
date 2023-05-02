@@ -11,3 +11,9 @@
 .recipe-img {
     border-radius: 20px;
 }
+
+.discover-container {
+    padding-top: 80px;
+    background-image: url('https://149410494.v2.pressablecdn.com/wp-content/uploads/2020/03/home-bottom.jpg');
+    background-repeat: no-repeat;
+}

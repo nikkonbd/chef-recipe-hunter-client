@@ -6,10 +6,12 @@ import Img from '../../public/login.jpg'
 
 const Register = () => {
     return (
-        <Container className='d-flex mt-5'>
-            <img className='w-50' src={Img} alt="" />
+        <Container className='mt-5'>
+            {/* <div className='w-100 mx-auto'>
+                <img className='w-25' src={Img} alt="" />
+            </div> */}
             <div>
-                <Form className='w-100'>
+                <Form className='w-50 mx-auto'>
                     <h4>Register Your Account!</h4>
                     <Form.Group className="mb-3" controlId="formBasicName">
                         <Form.Label>Your Name</Form.Label>
