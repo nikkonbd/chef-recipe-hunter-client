@@ -1,0 +1,11 @@
+.img-container img {
+    background-image: linear-gradient(to right, red, yellow);
+}
+
+h3 {
+    font-size: 40px;
+}
+
+.mb {
+    margin-bottom: 120px;
+}
