@@ -31,7 +31,7 @@ const router = createBrowserRouter([
             {
                 path: "recipes/:_id",
                 element: <PrivateRoute><ViewRecipe></ViewRecipe></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/chef/${params._id}`)
+                loader: ({ params }) => fetch(`https://chef-recipe-hunter-server-nikkon1998-gmailcom.vercel.app/chef/${params._id}`)
             }
         ]
     },

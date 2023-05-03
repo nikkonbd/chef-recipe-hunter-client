@@ -7,7 +7,7 @@ import { AuthContext } from '../provider/AuthProvider';
 
 const Login = () => {
 
-    const { user, signIn, googleLogin } = useContext(AuthContext);
+    const { user, signIn, googleLogin, githubLogin } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleSignIn = (event) => {
@@ -24,6 +24,7 @@ const Login = () => {
             .catch(error => {
                 console.log(error);
             })
+            .reset();
     }
 
     const handleGoogleLogin = (event) => {
@@ -38,6 +39,20 @@ const Login = () => {
                 console.log(error);
             })
     }
+
+    const handleGithubLogin = (event) => {
+        event.preventDefault()
+        githubLogin()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate('/');
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
     return (
         <Container className='p-4 mt-5 d-flex'>
             <div className=''>
@@ -62,7 +77,7 @@ const Login = () => {
                 </Button> <br />
                 <p className='mt-2'>Dont't Have An Account ? <Link className='text-decoration-none' to={"/register"}>Register Now</Link></p>
                 <Button onClick={handleGoogleLogin} className='w-100 mt-2' variant="outline-primary"><FaGoogle className='me-4'></FaGoogle> Google Sign-In</Button>
-                <Button className='w-100 mt-3' variant="outline-secondary"><FaGithub className='me-4'></FaGithub> Github Sign-In</Button>
+                <Button onClick={handleGithubLogin} className='w-100 mt-3' variant="outline-secondary"><FaGithub className='me-4'></FaGithub> Github Sign-In</Button>
             </Form>
         </Container>
     );

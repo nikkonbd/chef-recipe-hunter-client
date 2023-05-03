@@ -28,7 +28,8 @@ const Register = () => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorCode, errorMessage);
-            });
+            })
+        form.reset();
     }
     return (
         <Container className='mt-5'>
