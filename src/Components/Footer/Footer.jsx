@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import './Footer.css'
-import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaPhoneAlt, FaRegEnvelope, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
     return (
@@ -41,8 +41,8 @@ const Footer = () => {
                     <div className='mt-4'>
                         <p className='text-white'><small>787 Mark View Street, <br />
                             New Town, California</small></p>
-                        <p className='text-white m-0'><small>needhelp@thatix.com</small></p>
-                        <p className='text-white'><small>666 888 0000</small></p>
+                        <p className='text-white m-0'><FaRegEnvelope></FaRegEnvelope> <small>needhelp@thatix.com</small></p>
+                        <p className='text-white'> <FaPhoneAlt></FaPhoneAlt>  <small>666 888 0000</small></p>
                     </div>
                     <div>
                         <strong><FaFacebook className='text-white me-2'></FaFacebook></strong>

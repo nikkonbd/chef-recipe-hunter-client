@@ -1,26 +1,41 @@
-import React from 'react';
-import { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
+import React, { useContext } from 'react';
+import { Button, Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import { FaUserCircle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../provider/AuthProvider';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const naviGate = useNavigate();
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+                naviGate('/');
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
     return (
         <div>
             <Navbar bg="light" expand="lg">
-                <Container>
+                <Container className='py-2'>
                     <Navbar.Brand href="#home" className='fw-medium'>Village Cooking Recipe</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mx-auto">
                             <Nav.Link>
-                                <Link className='text-decoration-none' to={"/"}>Home</Link>
+                                <Link className='text-decoration-none' to={"/"}> <strong>Home</strong> </Link>
                             </Nav.Link>
                             <Nav.Link>
-                                <Link className='text-decoration-none' to={"/blog"}>Blogs</Link>
+                                <Link className='text-decoration-none text-black' to={"/blog"}>Blogs</Link>
                             </Nav.Link>
                             <Nav.Link href="#link">Contact</Nav.Link>
                         </Nav>
-                        <Link className='text-decoration-none' to={"/login"}><FaUserCircle></FaUserCircle> Login</Link>
+                        {user && <FaUserCircle style={{ fontSize: '2rem', marginRight: '1rem' }}></FaUserCircle>}
+                        {
+                            user ? <Button onClick={handleLogout} variant="danger">Logout</Button> : <Link className='text-decoration-none' to={"/login"}><Button variant="primary">Login</Button></Link>
+                        }
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

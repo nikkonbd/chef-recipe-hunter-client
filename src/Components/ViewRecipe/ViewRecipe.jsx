@@ -1,19 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Container } from 'react-bootstrap';
+import { FaThumbsUp } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
 
 const ViewRecipe = () => {
-    // const [recipess, setRecipes] = useState([]);
-
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/chef`)
-    //         .then(res => res.json())
-    //         .then(data => setRecipes(data))
-    // }, [])
-    // console.log(recipess);
 
     const recipe = useLoaderData();
-    const { image_url, author, details, recipes, rating } = recipe;
+    console.log(recipe);
+    const { image_url, author, details, recipes, rating, recipew } = recipe;
     return (
         <Container>
             <Card className=''>
@@ -27,9 +21,10 @@ const ViewRecipe = () => {
                         <p><strong>Experience: </strong>{author.experience}</p>
                         <div className='d-flex gap-4'>
                             <p><strong>Recipes: </strong>{recipes}</p>
-                            <p><strong>Likes: </strong>{rating.Likes}</p>
+                            <p><strong><FaThumbsUp className='text-warning'></FaThumbsUp> </strong>{rating.Likes} Likes</p>
                         </div>
                     </div>
+                    <p><strong>All Recipes: </strong>{recipew}</p>
                 </Card.Body>
             </Card>
         </Container>
