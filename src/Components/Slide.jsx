@@ -12,7 +12,7 @@ const Slide = () => {
     return (
         <Carousel className=''>
             <Carousel.Item className='img-container'>
-                <img style={{ height: '600px' }}
+                <img style={{}}
                     className="d-block w-100 img-fluid"
                     src={slide2}
                     alt="First slide"
@@ -23,7 +23,7 @@ const Slide = () => {
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-                <img style={{ height: '600px' }}
+                <img style={{}}
                     className="d-block w-100"
                     src={slide1}
                     alt="Second slide"
@@ -34,7 +34,7 @@ const Slide = () => {
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-                <img style={{ height: '600px' }}
+                <img style={{}}
                     className="d-block w-100"
                     src={slide3}
                     alt="Third slide"
@@ -47,7 +47,7 @@ const Slide = () => {
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-                <img style={{ height: '600px' }}
+                <img style={{}}
                     className="d-block w-100"
                     src={slide4}
                     alt="Third slide"
@@ -60,7 +60,7 @@ const Slide = () => {
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-                <img style={{ height: '600px' }}
+                <img style={{}}
                     className="d-block w-100"
                     src={slide5}
                     alt="Third slide"
@@ -73,7 +73,7 @@ const Slide = () => {
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-                <img style={{ height: '600px' }}
+                <img style={{}}
                     className="d-block w-100"
                     src={slide6}
                     alt="Third slide"

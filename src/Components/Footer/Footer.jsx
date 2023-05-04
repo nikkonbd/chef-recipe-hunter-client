@@ -6,7 +6,7 @@ import { FaFacebook, FaInstagram, FaPhoneAlt, FaRegEnvelope, FaTwitter, FaYoutub
 const Footer = () => {
     return (
         <div className='footer-bg py-5 mt-5'>
-            <Container className='d-flex justify-content-between'>
+            <Container className='footer-container d-flex justify-content-between'>
                 <div>
                     <h4 className='h4'>Subscribe</h4>
                     <p className='text-white mt-4'><small>Register and get <br /> notified about all the news & <br /> updates before it gets too late.</small></p>

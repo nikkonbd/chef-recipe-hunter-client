@@ -5,3 +5,13 @@ h3 {
 .mb {
     margin-bottom: 180px;
 }
+
+@media screen and (max-width: 576px) {
+    .mb {
+        margin-bottom: 0px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+}

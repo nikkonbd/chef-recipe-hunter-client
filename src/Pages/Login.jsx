@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { FaBeer, FaGithub, FaGoogle, } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
@@ -6,7 +6,7 @@ import Img from '../../public/login.jpg'
 import { AuthContext } from '../provider/AuthProvider';
 
 const Login = () => {
-
+    const [error, setError] = useState('');
     const { user, signIn, googleLogin, githubLogin } = useContext(AuthContext);
     const navigate = useNavigate();
 
@@ -23,6 +23,7 @@ const Login = () => {
             })
             .catch(error => {
                 console.log(error);
+                setError('Wrong Password, Please Provide Correct Password')
             })
             .reset();
     }
@@ -60,6 +61,7 @@ const Login = () => {
             </div>
             <Form onSubmit={handleSignIn} className=''>
                 <h4>Login Your Account!</h4>
+                <p className='text-danger'>{error}</p>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" name='email' placeholder="Enter email" />

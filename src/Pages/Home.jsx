@@ -8,6 +8,7 @@ import recipe3 from '../../public/slide4.jpg'
 import recipe4 from '../../public/slide5.jpg'
 import recipe5 from '../../public/slide6.jpg'
 import images from '../../public/images.jpg'
+import './Home.css'
 
 const Home = () => {
     const [chefs, setChefs] = useState([]);
@@ -37,20 +38,20 @@ const Home = () => {
                 <h2>Recipe Categories</h2>
                 <p>Choose a Category</p>
             </div>
-            <Container className='d-flex justify-content-between'>
-                <div>
+            <Container className='picture-container d-flex justify-content-between'>
+                <div className='image'>
                     <img style={{ width: '200px', height: '200px' }} className='recipe-img' src={recipe1} alt="" />
                 </div>
-                <div>
+                <div className='image'>
                     <img style={{ width: '200px', height: '200px' }} className='recipe-img' src={recipe2} alt="" />
                 </div>
-                <div>
+                <div className='image'>
                     <img style={{ width: '200px', height: '200px' }} className='recipe-img' src={recipe3} alt="" />
                 </div>
-                <div>
+                <div className='image'>
                     <img style={{ width: '200px', height: '200px' }} className='recipe-img' src={recipe4} alt="" />
                 </div>
-                <div>
+                <div className='image'>
                     <img style={{ width: '200px', height: '200px' }} className='recipe-img' src={recipe5} alt="" />
                 </div>
             </Container>

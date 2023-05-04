@@ -21,6 +21,9 @@ const ChefCard = ({ chef }) => {
                             <p><FaThumbsUp className='text-warning'></FaThumbsUp> {rating.Likes} Likes</p>
                         </div>
                         <Button variant="primary"><Link className='text-white text-decoration-none' to={`/recipes/${_id}`}>View Recipes</Link></Button>
+                        <Button className='ms-3' variant="warning" size="sm">
+
+                            Add to Favorite</Button>
                     </Card.Body>
                 </Card>
             </Container>
