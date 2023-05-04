@@ -55,11 +55,11 @@ const Login = () => {
     }
 
     return (
-        <Container className='p-4 mt-5 d-flex'>
-            <div className=''>
+        <Container className='p-4 mt-5 d-flex '>
+            {/* <div className=''>
                 <img className='image-fluid' src={Img} alt="" />
-            </div>
-            <Form onSubmit={handleSignIn} className=''>
+            </div> */}
+            <Form onSubmit={handleSignIn} className='mx-auto'>
                 <h4>Login Your Account!</h4>
                 <p className='text-danger'>{error}</p>
                 <Form.Group className="mb-3" controlId="formBasicEmail">

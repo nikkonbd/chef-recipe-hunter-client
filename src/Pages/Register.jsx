@@ -37,7 +37,7 @@ const Register = () => {
                 <img className='w-25' src={Img} alt="" />
             </div> */}
             <div>
-                <Form onSubmit={handleClickRegister} className='w-50 mx-auto'>
+                <Form onSubmit={handleClickRegister} style={{ width: '400px' }} className='mx-auto'>
                     <h4>Register Your Account!</h4>
                     <Form.Group className="mb-3" controlId="formBasicName">
                         <Form.Label>Your Name</Form.Label>

@@ -9,9 +9,11 @@ import 'react-toastify/dist/ReactToastify.css';
 const ChefCard = ({ chef }) => {
     // console.log(chef.image_url);
     const { _id, author, recipes, rating } = chef;
+    const [disable, setDisable] = useState(true);
 
-    const handleToastify = () => {
+    const handleToastify = (event) => {
         toast("Wow Added to Favorite!");
+        setDisable(event.toast)
     }
 
     return (
@@ -29,7 +31,7 @@ const ChefCard = ({ chef }) => {
                         <div className='d-flex align-items-center justify-content-between'>
                             <Button variant="primary"><Link className='text-white text-decoration-none' to={`/recipes/${_id}`}>View Recipes</Link></Button>
                             <div>
-                                <Button onClick={handleToastify} variant="warning" size="sm">Add to Favorite</Button>
+                                <Button onClick={handleToastify} variant="warning" size="sm" disabled={!disable}>Add to Favorite</Button>
                                 <ToastContainer />
                             </div>
                         </div>
