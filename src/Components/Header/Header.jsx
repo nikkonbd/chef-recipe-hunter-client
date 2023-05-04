@@ -20,7 +20,7 @@ const Header = () => {
         <div>
             <Navbar bg="light" expand="lg">
                 <Container className='py-2'>
-                    <Navbar.Brand href="#home" className='fw-medium'>Village Cooking Recipe</Navbar.Brand>
+                    <Navbar.Brand href="#home" className='fw-medium'><Link className='text-decoration-none text-black' to={'/'}><strong>Bangler Chef</strong></Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mx-auto">
