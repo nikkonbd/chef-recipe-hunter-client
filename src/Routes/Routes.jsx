@@ -6,6 +6,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import ViewRecipe from "../Components/ViewRecipe/ViewRecipe";
 import PrivateRoute from "./PrivateRoute";
+import PageNotFound from "../Pages/PageNotFound";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
                 path: "recipes/:_id",
                 element: <PrivateRoute><ViewRecipe></ViewRecipe></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://chef-recipe-hunter-server-nikkon1998-gmailcom.vercel.app/chef/${params._id}`)
+            },
+            {
+                path: '*',
+                element: <PageNotFound />
             }
         ]
     },
