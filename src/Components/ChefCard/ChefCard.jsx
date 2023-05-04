@@ -3,10 +3,16 @@ import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import './ChefCard.css'
 import { Link } from 'react-router-dom';
 import { FaThumbsUp } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ChefCard = ({ chef }) => {
     // console.log(chef.image_url);
     const { _id, author, recipes, rating } = chef;
+
+    const handleToastify = () => {
+        toast("Wow Added to Favorite!");
+    }
 
     return (
         <div>
@@ -20,10 +26,13 @@ const ChefCard = ({ chef }) => {
                             <p>Recipes: {recipes}</p>
                             <p><FaThumbsUp className='text-warning'></FaThumbsUp> {rating.Likes} Likes</p>
                         </div>
-                        <Button variant="primary"><Link className='text-white text-decoration-none' to={`/recipes/${_id}`}>View Recipes</Link></Button>
-                        <Button className='ms-3' variant="warning" size="sm">
-
-                            Add to Favorite</Button>
+                        <div className='d-flex align-items-center justify-content-between'>
+                            <Button variant="primary"><Link className='text-white text-decoration-none' to={`/recipes/${_id}`}>View Recipes</Link></Button>
+                            <div>
+                                <Button onClick={handleToastify} variant="warning" size="sm">Add to Favorite</Button>
+                                <ToastContainer />
+                            </div>
+                        </div>
                     </Card.Body>
                 </Card>
             </Container>
